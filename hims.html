@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    // a==root b==div 
+    function Data(a, b, c, d, e,) {
+      const obj = {
+        // (a) (b) 순서는 상관이 없다. 지정된 값에 따라서 따라가는 
+        // 일종의 유도미사일 개념이라 생각하자.
+        // getElementById가 a가 되야하는 이유--> <div id="root"></div>
+        rootname: document.getElementById(b),
+        firstname: document.createElement(a),
+        secondname: document.createElement(c),
+        thirdname: document.createElement(d),
+        fourname: document.createElement(e),
+      };
+      // return obj; ----> 
+      return obj;
+    }
+    // a=root b=div c=div d=div 
+    let DataForm = Data("root", "div", "div", "div", "div");
+
+  //   5. 저장되있는 오른쪽 값을 왼쪽에 넣었다.
+    let root = DataForm.rootname;
+    let first = DataForm.firstname;
+    let second = DataForm.secondname;
+    let third = DataForm.thirdname;
+    let four = DataForm.fourname;
+
+
+    function rootstyle(tagName) {
+      root.style.width = "100vw";
+      root.style.height = "100vh";
+      return root;
+    }
+    function firststyle(tagName) {
+      first.style.position = "absolute";
+      first.style.width = "40vw";
+      first.style.height = "3vh";
+      first.style.top = "300px";
+      first.style.left = "30%";
+      first.style.textAlign = "center";
+      first.innerHTML = "Lorem Ipsum";
+      first.style.border = "1px solid red";
+      return first;
+    }
+    function secondstyle(tagName) {
+      second.style.position = "absolute";
+      second.style.width = "30vw";
+      second.style.height = "2px";
+      second.style.left = "35%";
+      second.style.top = "340px";
+      second.style.background = "black";
+      second.style.border = "1px solid red";
+      return second;
+    }
+    function thirdstyle(tagName) {
+      third.style.position = "absolute";
+      third.style.width = "30vw";
+      third.style.height = "40vh";
+      third.style.left = "35%";
+      third.style.top = "364px";
+      third.style.color = "black";
+      third.innerHTML = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+      third.style.border = "1px solid red";
+      return third;
+    }
+    function fourstyle(tagName) {
+      four.style.position = "absolute";
+      four.style.width = "82px";
+      four.style.height = "82px";
+      four.style.left = "46%";
+      four.style.top = "780px";
+      four.style.background = "gray";
+      four.style.borderRadius = "50%";
+      four.style.border = "1px solid red";
+      return four;
+    }
+    let count = 0;
+    four.addEventListener("click", function () {
+      if ((count % 2) === 0) {
+        root.style.background = "gray";
+        first.style.color = "white";
+        third.style.color = "white";
+        four.style.background = "white";
+      } else {
+        root.style.background = "white";
+        first.style.color = "black";
+        third.style.color = "black";
+        four.style.background = "gray";
+      }
+      count++;
+    })
+    root.appendChild(first);
+    root.appendChild(second);
+    root.appendChild(third);
+    root.appendChild(four);
+    rootstyle("root");
+    firststyle("first");
+    secondstyle("second");
+    thirdstyle("third");
+    fourstyle("four");
+  </script>
+</body>
+</html>

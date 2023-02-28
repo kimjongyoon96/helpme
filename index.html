@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+
+      const itsMe = {
+        name: "kongukjae",
+        age: 20,
+        home: "oracle",
+        hosil: "305ho",
+        sentence: "저는" + this.name + "입니다",
+        test: `저는 ${this.name}입니다`,
+
+        adult: function() {
+          if(this.age >= 20) {
+            console.log("나는 성인이야");
+          } else {
+            console.log("나는 아직 성인이 아니야");
+          }
+        },
+
+        // 함수작성->this.name 작성후, console.log에 원하는 멘트 작성
+        nickName: function () {
+          //  this.name이 뭐하는 놈인지 알아내자. 
+           this.name = "공미남"
+          console.log("나는 멋쟁이란다");
+        }
+        
+    };
+
+    // console.table(itsMe);
+    itsMe.nickName();
+    // console.table(itsMe);
+    // console.log(itsMe);
+    // console.table(window.console);
+
+
+
+
+  </script>
+</body>
+</html>
